@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — Alby Biju</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="login.css" />
+</head>
+
+<body>
+
+  <!-- Animated background particles -->
+  <div class="bg-particles" id="particles"></div>
+
+  <!-- Floating brand -->
+  <div class="page-brand">Alby<span>.</span></div>
+
+  <!-- Login Card -->
+  <div class="login-wrap">
+    <div class="login-card">
+
+      <!-- Avatar -->
+      <div class="login-avatar">
+        <span>AB</span>
+        <div class="login-avatar__ring"></div>
+      </div>
+
+      <h1 class="login-title">Welcome Back</h1>
+      <p class="login-sub">Sign in to visit Alby's Portfolio</p>
+
+      <!-- Toggle: Email / Phone -->
+      <div class="login-toggle">
+        <button class="toggle-btn active" id="toggleEmail" onclick="switchTab('email')">Email</button>
+        <button class="toggle-btn" id="togglePhone" onclick="switchTab('phone')">Phone</button>
+      </div>
+
+      <!-- FORM -->
+      <form id="loginForm" onsubmit="handleLogin(event)">
+
+        <!-- Email input -->
+        <div class="form-group" id="emailGroup">
+          <label for="emailInput">Email Address</label>
+          <div class="input-wrap">
+            <span class="input-icon">✉</span>
+            <input type="email" id="emailInput" placeholder="you@example.com" autocomplete="email" />
+          </div>
+          <span class="field-error" id="emailError"></span>
+        </div>
+
+        <!-- Phone input -->
+        <div class="form-group hidden" id="phoneGroup">
+          <label for="phoneInput">Phone Number</label>
+          <div class="input-wrap">
+            <span class="input-icon">📱</span>
+            <input type="tel" id="phoneInput" placeholder="+91 98765 43210" autocomplete="tel" />
+          </div>
+          <span class="field-error" id="phoneError"></span>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label for="passwordInput">Password</label>
+          <div class="input-wrap">
+            <span class="input-icon">🔒</span>
+            <input type="password" id="passwordInput" placeholder="Enter your password"
+              autocomplete="current-password" />
+            <button type="button" class="toggle-pw" id="togglePw" onclick="togglePassword()">Show</button>
+          </div>
+          <span class="field-error" id="passwordError"></span>
+        </div>
+
+        <!-- Remember / Forgot -->
+        <div class="login-meta">
+          <label class="remember-label">
+            <input type="checkbox" id="rememberMe" />
+            <span>Remember me</span>
+          </label>
+          <a href="#" class="forgot-link">Forgot password?</a>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn-login" id="submitBtn">
+          <span id="btnText">Sign In →</span>
+          <span id="btnLoader" class="loader hidden"></span>
+        </button>
+
+        <!-- Error banner -->
+        <div class="error-banner hidden" id="errorBanner">
+          Incorrect credentials. Please try again.
+        </div>
+
+      </form>
+
+      <p class="login-footer">
+        Visiting as guest?
+        <a href="https://albybiju.github.io/portfolio1/" target="_blank" rel="noopener">View Portfolio →</a>
+      </p>
+
+    </div>
+
+    <!-- Side decoration -->
+    <div class="login-deco" aria-hidden="true">
+      <div class="deco-text">AI</div>
+      <div class="deco-badge">🤖 AI Enthusiast</div>
+      <div class="deco-badge">🔗 RAG Systems</div>
+      <div class="deco-badge">🧠 ML Learner</div>
+      <div class="deco-badge">🎓 BTech CSE</div>
+      <div class="deco-badge">📍 Palai, Kerala</div>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+
+</html>
